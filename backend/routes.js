@@ -22,4 +22,13 @@ router.get('/movies/:id', (req, res) => {
 })
 
 
+router.post('/addMovie', (req, res) => {
+  console.log(req.body)
+  Movie.create(req.body).then(movie => {
+      res.json(movie)
+  })
+})
+
+
+
 module.exports = router;
